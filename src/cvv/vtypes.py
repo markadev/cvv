@@ -11,7 +11,10 @@ class Version:
             (self.counter == other.counter)
 
     def __str__(self):
-        return "%s:%d" % (self.replica_id, self.counter)
+        return "{}:{}".format(self.replica_id, self.counter)
+
+    def __repr__(self):
+        return "Version({}, {})".format(repr(self.replica_id), self.counter)
 
 
 class VersionVector:

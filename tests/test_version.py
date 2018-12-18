@@ -26,9 +26,14 @@ def test_comparison():
     assert r2_1 == r2_1p
 
 
-def test_string():
-    v1 = Version('AA', 5)
-    assert str(v1) == 'AA:5'
+def test_str():
+    assert str(Version()) == 'None:0'
+    assert str(Version('AA', 3)) == 'AA:3'
+
+
+def test_repr():
+    assert repr(Version()) == 'Version(None, 0)'
+    assert repr(Version('AA', 3)) == "Version('AA', 3)"
 
 
 # vim:set ts=4 sw=4 expandtab:
